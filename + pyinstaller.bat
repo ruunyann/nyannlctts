@@ -1,1 +1,0 @@
-pyinstaller PSO2NGS_LCT_server.spec --distpath server_files
