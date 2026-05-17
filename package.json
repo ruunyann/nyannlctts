@@ -1,0 +1,53 @@
+{
+  "name": "nyannlctts",
+  "version": "1.0.0",
+  "description": "PSO2NGS Live Chat Translator",
+  "author": "BigCuteDonut",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.nyannlctts",
+    "productName": "nyannlctts",
+    "publish": {
+      "provider": "github",
+      "owner": "ruunyann",
+      "repo": "nyannlctts"
+    },
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false
+    },
+    "directories": {
+      "output": "release"
+    },
+    "extraResources": [
+      {
+        "from": "server_files/PSO2NGS_LCT_server.exe",
+        "to": "app.asar.unpacked/server/PSO2NGS_LCT_server.exe"
+      },
+      {
+        "from": "app_files/PSO2NGS_LCT.html",
+        "to": "app.asar.unpacked/app/PSO2NGS_LCT.html"
+      },
+      {
+        "from": "server.ico",
+        "to": "app.asar.unpacked/app/server.ico"
+      }
+    ],
+    "asar": true
+  },
+  "devDependencies": {
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.3.9"
+  }
+}

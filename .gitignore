@@ -1,0 +1,8 @@
+node_modules/
+release/
+dist/
+build/
+__pycache__/
+*.spec
+*.pyc
+server_files/PSO2NGS_LCT_server.exe

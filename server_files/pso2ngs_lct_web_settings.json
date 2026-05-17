@@ -1,0 +1,28 @@
+{
+  "log_dir": "C:\\Users\\ruuko\\Documents\\SEGA\\PHANTASYSTARONLINE2\\log_ngs",
+  "channels": [
+    "PUBLIC",
+    "PARTY",
+    "TEAM",
+    "GUILD",
+    "WHISPER"
+  ],
+  "cmd_prefixes": [
+    "/la",
+    "/cla",
+    "/e",
+    "/c",
+    "/item",
+    "/s",
+    "/w",
+    "/p",
+    "/t",
+    "/g",
+    "/mn",
+    "/ci",
+    "/cf",
+    "/stamp",
+    "/cos",
+    "/cam"
+  ]
+}
