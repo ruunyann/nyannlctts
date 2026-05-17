@@ -1,23 +1,4 @@
-## Folder Structure
-## フォルダ構成
-## โครงสร้างโฟลเดอร์
-
-```
-PSO2NGS_LCT/
-├── main.js                      ← Electron main process
-├── preload.js                   ← Electron preload (electronAPI)
-├── package.json
-├── PSO2NGS_LCT_server.spec      ← PyInstaller spec (hiddenimports, icon)
-├── server.ico                   ← Icon สำหรับ EXE และ System Tray
-├── build.bat                    ← Build script (Windows)
-├── app_files/
-│   └── PSO2NGS_LCT.html         ← Frontend UI
-└── server_files/
-    ├── PSO2NGS_LCT_server.py    ← Flask backend (source)
-    └── PSO2NGS_LCT_server.exe   ← (หลัง build)
-```
-
----
+--
 ## English
 
 ### Notes
