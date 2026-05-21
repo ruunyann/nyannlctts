@@ -4,7 +4,7 @@
  * + Auto-update via electron-updater + GitHub Releases
  */
 
-const { app, BrowserWindow, ipcMain, dialog, Tray, Menu } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog, Tray, Menu, globalShortcut, nativeImage } = require('electron')
 const path = require('path')
 const fs   = require('fs')
 const { spawn } = require('child_process')
@@ -215,12 +215,21 @@ if (!gotLock) {
     startServer()
     createTray()
     createWindow()
+
+    // ── Ctrl+R = Reload + Check Update ──────────────────────────────────────
+    globalShortcut.register('Control+R', () => {
+      if (mainWindow) {
+        mainWindow.webContents.reload()
+        if (app.isPackaged) autoUpdater.checkForUpdates()
+      }
+    })
   })
 
   app.on('window-all-closed', () => {})
 
   app.on('before-quit', () => {
     app.isQuitting = true
+    globalShortcut.unregisterAll()
     if (serverProcess) {
       try {
         const { execSync } = require('child_process')
